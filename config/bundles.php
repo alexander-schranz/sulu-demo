@@ -48,4 +48,5 @@ return [
     ONGR\ElasticsearchBundle\ONGRElasticsearchBundle::class => ['all' => true],
     Task\TaskBundle\TaskBundle::class => ['all' => true],
     Sulu\Bundle\AutomationBundle\SuluAutomationBundle::class => ['all' => true],
+    Sulu\Bundle\HeadlessBundle\SuluHeadlessBundle::class => ['all' => true],
 ];

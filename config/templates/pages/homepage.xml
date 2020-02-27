@@ -13,12 +13,12 @@
 
     <!-- Path to "Home" page's Twig file: -->
     <!-- templates/pages/homepage.html.twig -->
-    <view>pages/homepage</view>
+    <view>headless</view>
 
     <!-- Path to "Home" page's Controller -->
     <!-- In this case that's Sulu's default controller -->
     <!-- vendor/sulu/sulu/src/Sulu/Bundle/WebsiteBundle/Controller/DefaultController.php -->
-    <controller>Sulu\Bundle\WebsiteBundle\Controller\DefaultController::indexAction</controller>
+    <controller>Sulu\Bundle\HeadlessBundle\Controller\HeadlessWebsiteController::indexAction</controller>
 
     <!-- Lifetime of this pages cache -->
     <cacheLifetime>86400</cacheLifetime>

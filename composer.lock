@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9696997df35f31e96bec8b18ea396d65",
+    "content-hash": "adda7759b6b13f45e3c9013a713621e7",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3919,6 +3919,7 @@
                 "TLDExtract",
                 "domain parser"
             ],
+            "abandoned": true,
             "time": "2019-02-11T14:37:05+00:00"
         },
         {
@@ -6435,17 +6436,66 @@
             "time": "2019-11-08T12:40:07+00:00"
         },
         {
-            "name": "sulu/sulu",
-            "version": "2.0.3",
+            "name": "sulu/headless-bundle",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sulu/sulu.git",
-                "reference": "5220f971ec4dbd063b3f97a848c64fc25da1f4c3"
+                "url": "https://github.com/sulu/SuluHeadlessBundle.git",
+                "reference": "4a35a31c8bad0f6e4d34f2d094eced2c607dde1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sulu/sulu/zipball/5220f971ec4dbd063b3f97a848c64fc25da1f4c3",
-                "reference": "5220f971ec4dbd063b3f97a848c64fc25da1f4c3",
+                "url": "https://api.github.com/repos/sulu/SuluHeadlessBundle/zipball/4a35a31c8bad0f6e4d34f2d094eced2c607dde1c",
+                "reference": "4a35a31c8bad0f6e4d34f2d094eced2c607dde1c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "sulu/sulu": "^2.0.1"
+            },
+            "require-dev": {
+                "coduo/php-matcher": "^3.2",
+                "handcraftedinthealps/code-coverage-checker": "^0.2.0",
+                "jackalope/jackalope-doctrine-dbal": "^1.3.4",
+                "jangregor/phpstan-prophecy": "^0.4.1",
+                "php-ffmpeg/php-ffmpeg": "^0.13 || ^0.14",
+                "phpstan/phpstan": "^0.11.12",
+                "phpstan/phpstan-doctrine": "^0.11.5",
+                "phpstan/phpstan-phpunit": "^0.11.2",
+                "phpstan/phpstan-symfony": "^0.11.6",
+                "phpunit/phpunit": "^8.0",
+                "symfony/browser-kit": "^4.3",
+                "symfony/dotenv": "^4.3",
+                "symfony/monolog-bundle": "^3.1",
+                "thecodingmachine/phpstan-strict-rules": "^0.11.2",
+                "zendframework/zend-stdlib": "~2.3",
+                "zendframework/zendsearch": "@dev"
+            },
+            "type": "sulu-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Sulu\\Bundle\\HeadlessBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Add simpler headless functionality to the Sulu CMS.",
+            "time": "2020-02-26T08:01:46+00:00"
+        },
+        {
+            "name": "sulu/sulu",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sulu/sulu.git",
+                "reference": "a34cd49299ad08713bf3fcb4e9709bfa5e57981e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sulu/sulu/zipball/a34cd49299ad08713bf3fcb4e9709bfa5e57981e",
+                "reference": "a34cd49299ad08713bf3fcb4e9709bfa5e57981e",
                 "shasum": ""
             },
             "require": {
@@ -6461,6 +6511,9 @@
                 "doctrine/inflector": "^1.3",
                 "doctrine/orm": "^2.5.3",
                 "doctrine/phpcr-bundle": "^1.3.5 || ^2.0",
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-simplexml": "*",
                 "friendsofsymfony/http-cache": "^2.5",
                 "friendsofsymfony/http-cache-bundle": "^2.6",
                 "friendsofsymfony/jsrouting-bundle": "^2.3",
@@ -6528,6 +6581,7 @@
                 "jackalope/jackalope-doctrine-dbal": "< 1.3.0",
                 "jackalope/jackalope-jackrabbit": "< 1.3.0",
                 "phpcr/phpcr-utils": "1.2.0 - 1.2.10 || 1.3.0 - 1.3.2",
+                "phpdocumentor/reflection-docblock": "5.0.0",
                 "symfony/doctrine-bridge": "< 3.4.0",
                 "symfony/http-foundation": "4.3.4"
             },
@@ -6557,8 +6611,8 @@
                 "php-ffmpeg/php-ffmpeg": "^0.13 || ^0.14",
                 "phpcr/phpcr-shell": "^1.0",
                 "phpspec/prophecy": "^1.7",
-                "phpstan/phpstan": "^0.11.5",
-                "phpstan/phpstan-symfony": "^0.11.5",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-symfony": "^0.12",
                 "phpunit/phpunit": "^8.0",
                 "superbalist/flysystem-google-storage": "^7.1",
                 "symfony/browser-kit": "^4.3",
@@ -6573,6 +6627,8 @@
                 "symfony/web-server-bundle": "^4.3"
             },
             "suggest": {
+                "ext-fileinfo": "* - Needed to recognize file types of uploaded files",
+                "ext-zip": "* - Needed by the download commands for the admin build and its translations",
                 "handcraftedinthealps/zendsearch": "To use the PHP based Zend Search library (based on Lucene)",
                 "league/flysystem": "^1.0 - Needed for remote media-storages",
                 "league/flysystem-aws-s3-v3": "^1.0.1 - Needed for AWS S3 compatible storages (aws s3 or minio)",
@@ -6618,7 +6674,7 @@
                 "symfony",
                 "web-application"
             ],
-            "time": "2020-01-13T15:20:20+00:00"
+            "time": "2020-02-11T15:53:56+00:00"
         },
         {
             "name": "sulu/web-twig",
@@ -12841,8 +12897,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sulu/automation-bundle": 15,
         "sulu/article-bundle": 20,
+        "sulu/automation-bundle": 15,
+        "sulu/headless-bundle": 20,
         "zendframework/zendsearch": 5
     },
     "prefer-stable": false,
