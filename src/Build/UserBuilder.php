@@ -11,12 +11,15 @@ use Sulu\Bundle\SecurityBundle\Build\UserBuilder as SuluUserBuilder;
 use Sulu\Bundle\SecurityBundle\Entity\User;
 use Sulu\Bundle\SecurityBundle\Entity\UserSetting;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Webmozart\Assert\Assert;
 
 class UserBuilder implements BuilderInterface, ContainerAwareInterface
 {
-    use ContainerAwareTrait;
+    /**
+     * @var ContainerInterface
+     */
+    protected $container;
 
     public function __construct(private readonly SuluUserBuilder $decoratedUserBuilder, ContainerInterface $container = null)
     {
